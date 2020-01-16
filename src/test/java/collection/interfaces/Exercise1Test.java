@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -45,5 +46,20 @@ public class Exercise1Test extends ClassicOnlineStore {
         // nameCollection.
 
         assertThat(nameCollection.toString(), is("[Patrick, Chris]"));
+    }
+
+    @Test
+    public void replaceTheElements() {
+        List<String> nameList =
+                new ArrayList<>(Arrays.asList("Joe", "Steven", "Patrick", "Chris"));
+
+        /**
+         * Create a {@link UnaryOperator} which returns given string wrapped with "()".
+         * Replace the elements in {@link nameList} with string wrapped with "()" using {@link List#replaceAll} .
+         */
+        UnaryOperator<String> unaryOperator = null;
+        // nameList.
+
+        assertThat(nameList.toString(), is("[(Joe), (Steven), (Patrick), (Chris)]"));
     }
 }
