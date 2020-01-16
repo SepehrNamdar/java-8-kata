@@ -61,4 +61,21 @@ public class Exercise2Test {
         assertThat(map.get("Alice"), is(32));
         assertThat(map.get("Joe"), is(54));
     }
+
+    @Test
+    public void ignoringAbsentKeys() {
+        Map<String, Integer> map = new HashMap<>(this.map);
+
+        /**
+         * Try to increment the value for keys "Joe", "Steven" and "Alice" using {@link Map#computeIfPresent}.
+         */
+        BiFunction<Object, Integer, Integer> remappingFunction = null;
+        // map.
+        // map.
+        // map.
+
+        assertThat(map.get("Joe"), is(23));
+        assertThat(map.get("Steven"), is(28));
+        assertThat(map, not(hasKey("Alice")));
+    }
 }
