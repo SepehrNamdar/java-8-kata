@@ -89,4 +89,18 @@ public class Exercise1Test extends ClassicOnlineStore {
         assertThat(nameStream.count(), is(4L));
         assertThat(nameStream.isParallel(), is(false));
     }
+
+    @Test
+    public void createParallelStream() {
+        Collection<String> nameList =
+                new ArrayList<>(Arrays.asList("Joe", "Steven", "Patrick", "Chris"));
+
+        /**
+         * Create a parallel {@link Stream} using {@link Collection#parallelStream} or {@link Stream#parallel}
+         */
+        Stream<String> nameParallelStream = null;
+
+        assertThat(nameParallelStream.count(), is(4L));
+        assertThat(nameParallelStream.isParallel(), is(true));
+    }
 }
