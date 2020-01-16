@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.BiFunction;
 
 import static org.hamcrest.Matchers.hasKey;
 import static org.hamcrest.Matchers.is;
@@ -43,5 +44,21 @@ public class Exercise2Test {
 
         assertThat(map.get("Alice"), is(32));
         assertThat(map.get("Joe"), is(22));
+    }
+
+    @Test
+    public void mergeValues() {
+        Map<String, Integer> map = new HashMap<>(this.map);
+
+        /**
+         * Merge 2 entry to {@link map} with key="Alice" value=32, key="Joe" value=32 using {@link Map#merge}.
+         * If the value already exist for the key, remap with sum value.
+         */
+        BiFunction<Integer, Integer, Integer> remappingFunction = null;
+        // map.
+        // map.
+
+        assertThat(map.get("Alice"), is(32));
+        assertThat(map.get("Joe"), is(54));
     }
 }
