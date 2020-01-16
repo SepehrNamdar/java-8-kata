@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class Eercise2Test extends ClassicOnlineStore {
+public class Exercise2Test extends ClassicOnlineStore {
 
     @Test
     public void sortByAge() {
