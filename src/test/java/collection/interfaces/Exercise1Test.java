@@ -8,6 +8,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
+import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -72,5 +73,20 @@ public class Exercise1Test extends ClassicOnlineStore {
         // nameList.
 
         assertThat(nameList.toString(), is("[Joe, Chris, Steven, Patrick]"));
+    }
+
+    @Test
+    public void createStream() {
+        Collection<String> nameList =
+                new ArrayList<>(Arrays.asList("Joe", "Steven", "Patrick", "Chris"));
+
+        /**
+         * Create a serial {@link Stream} using {@link Collection#stream}
+         * You can learn about {@link Stream} APIs at stream-api module.
+         */
+        Stream<String> nameStream = null;
+
+        assertThat(nameStream.count(), is(4L));
+        assertThat(nameStream.isParallel(), is(false));
     }
 }
