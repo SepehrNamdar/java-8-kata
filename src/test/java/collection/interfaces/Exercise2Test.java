@@ -30,4 +30,18 @@ public class Exercise2Test {
 
         assertThat(defaultVal, is(30));
     }
+
+    @Test
+    public void putIfNotExisting() {
+        Map<String, Integer> map = new HashMap<>(this.map);
+
+        /**
+         * Try to put 2 entry with key as "Alice" value as 32, key as "Joe" and value as 32 using {@link Map#putIfAbsent}.
+         */
+        // map.
+        // map.
+
+        assertThat(map.get("Alice"), is(32));
+        assertThat(map.get("Joe"), is(22));
+    }
 }
