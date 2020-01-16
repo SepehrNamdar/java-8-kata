@@ -4,10 +4,7 @@ import common.tool.dataset.ClassicOnlineStore;
 import common.tool.entity.Customer;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
@@ -61,5 +58,19 @@ public class Exercise1Test extends ClassicOnlineStore {
         // nameList.
 
         assertThat(nameList.toString(), is("[(Joe), (Steven), (Patrick), (Chris)]"));
+    }
+
+    @Test
+    public void sortByName() {
+        List<String> nameList =
+                new ArrayList<>(Arrays.asList("Joe", "Steven", "Patrick", "Chris"));
+
+        /**
+         * Create a {@link Comparator} to sort the name list by their name's length in ascending order.
+         */
+        Comparator<String> comparator = null;
+        // nameList.
+
+        assertThat(nameList.toString(), is("[Joe, Chris, Steven, Patrick]"));
     }
 }
