@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 public class Exercise5Test extends ClassicOnlineStore {
-    
+
     @Test
     public void nameList() {
         List<Customer> customerList = this.mall.getCustomerList();
