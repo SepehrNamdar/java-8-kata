@@ -20,7 +20,14 @@ public class StreamCreatorShould {
     }
 
     @Test
-    void create_a_collection_stream() {
+    void create_a_stream() {
+        Stream<Boolean> aStream = Stream.of(true, false);
+
+        assertThat(aStream).containsExactly(true, false);
+    }
+
+    @Test
+    void create_a_stream_from_a_collection() {
         Collection<Integer> collection = Arrays.asList(1, 2, 3);    // Collection : List, Set, Map, etc.
         Stream<Integer> collectionStream = collection.stream();
 
@@ -28,11 +35,7 @@ public class StreamCreatorShould {
     }
 
     @Test
-    void create_an_array_stream() {
-        Stream<Boolean> arrayStream = Stream.of(true, false);
-
-        assertThat(arrayStream).containsExactly(true, false);
-
+    void create_a_stream_from_an_array() {
         String[] stringArray = new String[] {"a", "b", "c"};
         Stream<String> fullArrayStream = Arrays.stream(stringArray);
         Stream<String> partialArrayStream = Arrays.stream(stringArray, 1, 3);
